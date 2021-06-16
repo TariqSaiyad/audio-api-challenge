@@ -21,7 +21,7 @@
     flex-direction: column;
     padding: 1rem;
     width: 100%;
-    max-width: 1024px;
+    max-width: 70rem;
     margin: 0 auto;
     box-sizing: border-box;
   }
@@ -31,7 +31,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 2rem;
   }
 
   footer a {
@@ -40,7 +40,7 @@
 
   @media (min-width: 480px) {
     footer {
-      padding: 40px 0;
+      padding: 2rem 0;
     }
   }
 

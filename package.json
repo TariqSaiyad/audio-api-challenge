@@ -2,7 +2,7 @@
   "name": "Web Audio API challenge",
   "version": "0.0.1",
   "scripts": {
-    "dev": "svelte-kit dev",
+    "dev": "svelte-kit dev --port 7080 --host",
     "build": "svelte-kit build",
     "preview": "svelte-kit preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
@@ -31,6 +31,7 @@
   "dependencies": {
     "@fontsource/fira-mono": "^4.2.2",
     "@lukeed/uuid": "^2.0.0",
+    "codejar": "^3.4.0",
     "cookie": "^0.4.1",
     "prism-theme-vars": "^0.2.2"
   }

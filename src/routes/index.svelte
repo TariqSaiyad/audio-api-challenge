@@ -1,11 +1,9 @@
 <script context="module" lang="ts">
   export const prerender = true;
-
 </script>
 
 <script lang="ts">
-  import Counter from "$lib/Counter/index.svelte";
-
+  import Code from "$lib/Code/index.svelte";
 </script>
 
 <svelte:head>
@@ -13,9 +11,8 @@
 </svelte:head>
 
 <section>
-  <h1>Web Audio Test</h1>
-
-  <Counter />
+  <Code />
+  <!-- <Counter /> -->
 </section>
 
 <style lang="scss">
@@ -25,7 +22,4 @@
     align-items: center;
     flex: 1;
   }
-
-
-
 </style>
