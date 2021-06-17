@@ -1,0 +1,9 @@
+.editor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__code {
+    border-radius: 0.5rem;
+  }
+}
