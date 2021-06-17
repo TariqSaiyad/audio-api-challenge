@@ -27,7 +27,7 @@ function CodeEditor() {
         width='100%'
         fontSize={18}
         className='editor__code'
-        placeholder='Placeholder Text'
+        placeholder='Your JavaScript here'
         mode='javascript'
         theme='monokai'
         name='blah2'
