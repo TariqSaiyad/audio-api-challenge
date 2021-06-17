@@ -1,0 +1,297 @@
+/*
+* Config for the styles
+*/
+// --------  opacities  --------
+
+$opacity-semi-translucent: 0.02;
+$opacity-translucent: 0.35;
+$opacity-very-translucent: 0.6;
+$opacity-semi-transparent: 0.8;
+
+// --------  colors  --------
+$color-blue-light: #24A7FF;
+$color-blue: #1472E6;
+$color-blue-dark: #008CFF;
+$color-blue-button-dark: #0E5CBA;
+$color-blue-active: #1470E1;
+$color-blue-menu-dark: #20419A;
+$color-indigo: #272082;
+$color-purple-blue: #4E248B;
+$color-purple-light: #9192C8;
+$color-purple: #9A46CE;
+$color-purple-red: #502189;
+$color-purple-dark: #2F1B55;
+$color-red-light: #F42C49;
+$color-red: #E4243B;
+$color-red-dark: #E21A40;
+$color-melon-light: #FB2;
+$color-melon: #FFAC27;
+$color-melon-dark: #FF9C0D;
+$color-green: #0E853E;
+$color-black: #050505;
+$color-xdark-grey: #5E5E5E;
+$color-xdark-grey-s2: #1B1C1D;
+$color-dark-grey: #808080;
+$color-mid-grey: #B7B7B7;
+$color-charcoal-mid: #1e1e1e;
+$color-charcoal-mid-2: #2C2C2C;
+$color-charcoal-mid-s2: #2C2C2C;
+$color-charcoal-mid-s3: #343433;
+$color-charcoal-mid-s4: #313131;
+$color-charcoal-footer: #242424;
+$color-grey-icon: #A0A0A0;
+$color-bullet-icon: #CDCFDD;
+$color-disabled-border: #A7A9AC;
+$color-disabled-background: #E6E7E8;
+$color-grey: #EAE9F3;
+$color-pale-grey: #E4E6E2;
+$color-light-grey: #EAEAEA;
+$color-light-grey-s2: #FAFAFA;
+$color-light-grey-s3: #ECECEC;
+$color-light-grey-s4: #D1D3D4;
+$color-light-grey-s5: #757575;
+$color-light-grey-s6: #FFFFFF80;
+$color-light-grey-s7: #737373;
+$color-xlight-grey: #F5F5F5;
+$color-xlight-grey-s2: #FAFAFA;
+$color-white: #FFF;
+$color-grey-text: #4A4A4A;
+$color-yellow: #FFD444;
+$color-yellow-dark: #E5BE3D;
+$color-light-purple: #F2F3FF;
+$color-lightest-purple: #F5F6FF;
+$color-grey-mid: #DEDEDE;
+$color-orange: #CF6B38;
+
+$light-background-color-yellow: rgba(255, 212, 68, 0.08);
+
+//mappings
+$color-background: $color-charcoal-mid;
+$color-background-light: $color-lightest-purple;
+$color-text: $color-light-grey;
+$color-footer-background: $color-charcoal-mid;
+$color-footer-copyright-background: #121212;
+
+// --------  gradients  --------
+
+$gradient: linear-gradient(
+  120deg,
+  transparentize($color-pale-grey, 0.2) 20%,
+  transparentize($color-pale-grey, 0.2) 40%,
+  transparentize($color-purple-dark, 0.9) 50%,
+  transparentize($color-pale-grey, 0.2) 60%,
+  transparentize($color-pale-grey, 0.2) 80%
+);
+
+$gradient-light: linear-gradient(
+  120deg,
+  transparentize($color-white, 0.6) 20%,
+  transparentize($color-white, 0.6) 35%,
+  transparentize($color-white, 0.1) 50%,
+  transparentize($color-white, 0.6) 65%,
+  transparentize($color-white, 0.6) 80%
+);
+
+$gradient-primary: linear-gradient(
+  120deg,
+  transparentize($color-purple, 0.9) 20%,
+  transparentize($color-purple, 0.9) 35%,
+  transparentize($color-purple, 0.8) 50%,
+  transparentize($color-purple, 0.9) 65%,
+  transparentize($color-purple, 0.9) 80%
+);
+
+$gradient-dark: linear-gradient(
+  120deg,
+  transparentize($color-purple-dark, 0.6) 20%,
+  transparentize($color-purple-dark, 0.6) 35%,
+  transparentize($color-purple-dark, 0.4) 50%,
+  transparentize($color-purple-dark, 0.6) 65%,
+  transparentize($color-purple-dark, 0.6) 80%
+);
+
+// --------  font  --------
+
+$font-family: "Gotham SSm A", "Gotham SSm B", sans-serif;
+$font-family-secondary: 'Martel', serif;
+
+/* stylelint-disable-next-line unit-blacklist */
+$font-size-base-mobile: 16px;
+/* stylelint-disable-next-line unit-blacklist */
+$font-size-base: 18px;
+
+$font-size-xxxsmall: 0.5rem;
+$font-size-xxsmall: 0.65rem;
+$font-size-tablet-nav: 0.722rem;
+$font-size-xsmall: 0.83rem;
+$font-size-card: 0.85rem;
+$font-size-small: 0.9rem;
+$font-size-standard: 1rem;
+$font-size-medium: 1.1rem;
+$font-size-ms: 1.3rem;
+$font-size-mml: 1.5rem;
+$font-size-ml: 1.75rem;
+$font-size-large: 2rem;
+$font-size-mxlarge: 2.5rem;
+$font-size-xlarge: 3rem;
+$font-size-xxlarge: 4rem;
+$font-size-xxxlarge: 5rem;
+$font-size-headline-sm: 2rem;
+$font-size-headline: 2.5rem;
+
+$font-size-h1: 3.056rem;
+$font-size-h2: 1.563rem;
+$font-size-h3: 1.953rem;
+$font-size-h4: 1.556rem;
+$font-size-h5: 1.25rem;
+$font-size-h6: 1rem;
+
+$line-height-base: 1.666;
+$line-height-mid: 1.5;
+$line-height-large: 1.2;
+$line-height-medium: 1.143;
+
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-book: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+$font-weight-black: 800;
+
+// --------  sizes  --------
+
+$gap-base: 2rem;
+
+$icon-size: 2.5rem;
+
+/* stylelint-disable-next-line unit-blacklist */
+$size-header-height: 100px;
+$size-header-height: 100px;
+/* stylelint-disable-next-line unit-blacklist */
+$size-header-height-narrow: 80px;
+$size-header-height-narrow: 80px;
+/* stylelint-disable-next-line unit-blacklist */
+$size-header-lang-toggle-height: 40px;
+$size-header-lang-toggle-height: 40px;
+/* stylelint-disable-next-line unit-blacklist */
+$size-header-nav-height: 60px;
+$size-header-nav-height: 60px;
+
+$size-card-width: 12rem;
+$size-card-height: 13rem;
+
+/* stylelint-disable-next-line unit-blacklist */
+$size-navbar-height: 80px;
+/* stylelint-disable-next-line unit-blacklist */
+$size-navbar-height-mobile: 80px;
+
+/* stylelint-disable-next-line unit-blacklist */
+$size-accordion-toggle-width: 29px;
+
+// --------  screens  --------
+// these are in px rather than rems cause safari wasn't handling rems.
+/* stylelint-disable unit-blacklist */
+$screen-xs-min: 448px; //28rem;
+$screen-sm-min: 560px; //35rem;
+$screen-md-min: 800px; //50rem;
+$screen-ml-min: 960px; //60rem;
+$screen-lg-min: 1260px; //70rem;
+$screen-xl-min: 1530px; ///85rem;
+$screen-xxl-min: 2000px; //100rem;
+
+$screen-mobile-narrow: $screen-sm-min;
+// Bluma screen breakpoints
+// https://bulma.io/documentation/overview/responsiveness/
+$screen-mobile: 767px;
+$screen-tablet: 768px;
+$screen-desktop: 1024px;
+$screen-widescreen: 1216px;
+$screen-fullhd: 1408px;
+/* stylelint-enable unit-blacklist */
+
+// --------  containers  --------
+
+$container-mobile: $screen-xs-min;
+$container-narrow: 48rem;
+$container-standard: 68rem;
+
+// --------  ratios --------
+$ratio-16x9: 56.25%;
+
+// --------  global padding --------
+$component-bottom-padding: 2rem;
+
+// --------  shadows  --------
+
+$shadow-standard: 0 0.1rem 1rem transparentize($color-black, 0.95);
+$shadow-text: 0 -0.05rem 0.1rem transparentize($color-black, 0.9);
+$shadow-drop: 0 0.5rem 1rem 0 transparentize($color-black, 0.9);
+$shadow-drop-active: -0.25rem 0 0.5rem -0.25rem $color-black;
+
+// --------  border  --------
+
+/* stylelint-disable-next-line unit-blacklist */
+$border-width: 1px;
+/* stylelint-disable-next-line unit-blacklist */
+$border-width-medium: 2px;
+/* stylelint-disable-next-line unit-blacklist */
+$border-width-bold: 3px;
+/* stylelint-disable-next-line unit-blacklist */
+$border-width-extra-bold: 4px;
+/* stylelint-disable-next-line unit-blacklist */
+$border-width-xextra-bold: 5px;
+
+/* stylelint-disable-next-line unit-blacklist */
+$border-width-wide: 10px;
+$border-width-rem: 0.025rem;
+
+$border-width-button: $border-width * 2;
+$border-standard: #{$border-width} solid $color-pale-grey;
+$border-white: #{$border-width} solid $color-white;
+$border-transparent: #{$border-width*2} solid transparent;
+$border-translucent: #{$border-width*2} solid transparentize($color-white, 0.75);
+$border-translucent-purple: #{$border-width*2} solid transparentize($color-purple, 0.75);
+$border-mid: #{$border-width} solid $color-mid-grey;
+$border-button: $border-width-button solid $color-blue;
+$border-radius: 0.25rem;
+$border-radius-medium: 0.5rem;
+$border-radius-large: 1rem;
+$border-radius-xlarge: 2rem;
+
+// --------  transitions  --------
+
+$transition-all: all 350ms ease-in;
+$transition-border: border 350ms ease-in;
+$transition-background: background 250ms ease-in;
+$transition-color: color 250ms ease-in;
+$transition-opacity: opacity 300ms ease-in-out;
+
+$transition-slide: transform 350ms ease-in-out;
+$transition-flip: transform 300ms ease-in, opacity 150ms ease-in 100ms;
+$transition-expand: transform 300ms ease-in-out;
+$transition-cover-fade: opacity 150ms ease-in;
+$transition-fade: opacity 300ms ease-in;
+
+$transition-duration: 300ms;
+$transition-timing: ease-in;
+
+// --------  z layers --------
+$z-modal: 30;
+$z-menu: 20;
+$z-toggle: 15;
+$z-buffers: 10;
+$z-default: 1;
+$z-below: -10;
+
+// --------  print  --------
+
+$print-page: a4 !default;
+$print-margin: 1.5cm 1cm !default;
+$print-orphans: 3 !default;
+$print-widows: 3 !default;
