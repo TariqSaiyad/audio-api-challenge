@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.html"
+    "start": "parcel serve index.html --port 7080"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/TariqSaiyad/audio-api-challenge#readme",
   "dependencies": {
+    "acorn": "^7.4.1",
+    "acro": "^0.0.1",
     "react": "^17.0.2",
     "react-ace": "^9.4.1",
     "react-dom": "^17.0.2"

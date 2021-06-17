@@ -6,6 +6,9 @@ import 'ace-builds/src-noconflict/theme-monokai'
 import 'ace-builds/src-noconflict/ext-language_tools'
 
 function CodeEditor() {
+  const acorn = require('acorn')
+  const walk = require('acorn-walk')
+
   const [code, setCode] = useState(
     `for (var i = 1; i < 16; i++) {
   if (i % 15 == 0) console.log('FizzBuzz')
@@ -18,6 +21,22 @@ function CodeEditor() {
   function onChange(value) {
     setCode(value)
     console.log(value)
+    console.log(acorn)
+    const parsed = acorn.parse(value)
+    // walk.full(acorn.parse(value), node => {
+    //   console.log(node)
+    // })
+    // walk.simple(acorn.parse(value), {
+    //   Literal: (node) => console.log(node),
+    //   VariableDeclarator: (node) => console.log(node),
+    //   Identifier: (node) => console.log(node),
+    //   BinaryExpression: (node) => console.log(node),
+    //   UpdateExpression: (node) => console.log(node),
+    //   MemberExpression: (node) => console.log(node),
+    //   IfStatement: (node) => console.log(node),
+    //   ForStatement: (node) => console.log(node),
+    // })
+    console.log(parsed);
   }
 
   return (
@@ -34,7 +53,7 @@ function CodeEditor() {
         // onLoad={this.onLoad}
         onChange={onChange}
         showPrintMargin={true}
-        showGutter={true}
+        showGutter={false}
         highlightActiveLine={true}
         value={code}
         setOptions={{
