@@ -25,7 +25,7 @@ export const NodeMap = new Map([
   // ['CallExpression', parseCallExpression],
   // ['ExpressionStatement', parseExpressionStatement],
   ['IfStatement', parseIfStatement],
-  ['BlockStatement', parseBlockStatement],
+  // ['BlockStatement', parseBlockStatement],
   ['ForStatement', parseForStatement],
   ['Program', parseProgram],
 ])
@@ -56,7 +56,7 @@ function parseVariableDeclaration(node) {
 }
 function parseIdentifier(node) {
   console.log(`${node.type}: ${node.name}`)
-  return 'F4' 
+  return 'F4'
 }
 function parseBinaryExpression(node) {
   console.log(`${node.type}: ${node.operator}`)
