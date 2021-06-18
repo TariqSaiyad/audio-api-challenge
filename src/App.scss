@@ -1,0 +1,14 @@
+.app {
+  display: flex;
+  flex-direction: column;
+
+  &__code-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 4rem;
+  }
+
+  &__run {
+    padding: 0rem 2rem;
+  }
+}

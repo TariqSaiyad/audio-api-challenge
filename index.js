@@ -1,6 +1,11 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { App } from './src/App'
+import { render } from 'react-dom'
+import App from './src/App'
 
-const mountNode = document.getElementById('app')
-ReactDOM.render(<App />, mountNode)
+function renderApp() {
+  render(<App />, document.getElementById('app'))
+}
+
+renderApp()
+
+module.hot.accept()
