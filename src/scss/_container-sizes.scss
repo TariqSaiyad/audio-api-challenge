@@ -1,26 +1,20 @@
 .container {
-    &__standard {
-        max-width: 76rem;
-        margin: 0 auto;
-        padding: 0 4rem;
+  &__standard {
+    max-width: 76rem;
+    margin: 0 auto;
+    padding: 0 4rem;
 
-        @include breakpoint-desktop-down {
-            padding: 0 2rem;
-        }
+    @include breakpoint-desktop-down {
+      padding: 0 2rem;
     }
-    &__narrow {
-        max-width: 56rem;
-        margin: 0 auto;
-        padding: 0 4rem;
-        @include breakpoint-desktop-down {
-            padding: 0 2rem;
-            max-width: unset;
-        }
-
-        &--no-padding{
-            max-width: 56rem;
-            margin: 0;
-            padding: 0;
-        }
+  }
+  &__narrow {
+    max-width: 56rem;
+    margin: 0 auto;
+    padding: 0 4rem;
+    @include breakpoint-desktop-down {
+      padding: 0 2rem;
+      max-width: unset;
     }
+  }
 }

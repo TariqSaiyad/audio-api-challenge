@@ -201,7 +201,7 @@ a:visited {
   color: $color-charcoal-mid;
   position: relative;
   text-decoration-style: solid;
-  transition: $transition-all;
+  transition: all 200ms ease;
 
   & > .nonvisual-indicator {
     margin-left: 0.25rem;
@@ -215,11 +215,11 @@ a:visited {
 
   .content & {
     text-decoration: none;
-    border-bottom: $border-width solid $color-charcoal-mid;
+    border-bottom: 1px solid $color-charcoal-mid;
 
     @include hover-focus-active {
       color: $color-blue-active;
-      border-bottom: $border-width solid $color-blue-active;
+      border-bottom: 1px solid $color-blue-active;
     }
   }
 

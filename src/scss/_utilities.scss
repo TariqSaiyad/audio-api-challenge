@@ -11,7 +11,7 @@ $screen-xl-min: 1530px; ///85rem;
 $screen-xxl-min: 2000px; //100rem;
 /* stylelint-enable unit-blacklist */
 
-@function gap-size($multiplier:1) {
+@function gap-size($multiplier: 1) {
   @return ($gap-base * $multiplier);
 }
 
@@ -81,131 +81,10 @@ $screen-xxl-min: 2000px; //100rem;
   }
 }
 
-// Responsive breakpoint
-@mixin breakpoint-md-up {
-  @include breakpoint-custom-up($screen-md-min) {
-    @content;
-  }
-}
-
-@mixin breakpoint-tablet-portrait-landscape {
-  @media (min-width: $screen-tablet-portrait) and (max-width: $screen-mlg-min) {
-    @content;
-  }
-}
-
 @mixin breakpoint-ml-up {
   @include breakpoint-custom-up($screen-ml-min) {
     @content;
   }
-}
-
-@mixin breakpoint-lg-up {
-  @include breakpoint-custom-up($screen-lg-min) {
-    @content;
-  }
-}
-
-@mixin breakpoint-xl-up {
-  @include breakpoint-custom-up($screen-xl-min) {
-    @content;
-  }
-}
-
-@mixin breakpoint-xxl-up {
-  @include breakpoint-custom-up($screen-xxl-min) {
-    @content;
-  }
-}
-
-@mixin breakpoint-custom-down($min) {
-  @media all and (max-width: $min) {
-    @content;
-  }
-}
-
-@mixin breakpoint-xs-down {
-  @include breakpoint-custom-down($screen-xs-min) {
-    @content;
-  }
-}
-
-@mixin breakpoint-sm-down {
-  @include breakpoint-custom-down($screen-sm-min) {
-    @content;
-  }
-}
-
-@mixin breakpoint-md-down {
-  @include breakpoint-custom-down($screen-md-min) {
-    @content;
-  }
-}
-
-@mixin breakpoint-ml-down {
-  @include breakpoint-custom-down($screen-ml-min) {
-    @content;
-  }
-}
-
-@mixin breakpoint-lg-down {
-  @include breakpoint-custom-down($screen-lg-min) {
-    @content;
-  }
-}
-
-@mixin breakpoint-mlg-down {
-  @include breakpoint-custom-down($screen-mlg-min) {
-    @content;
-  }
-}
-
-@mixin breakpoint-mmlg-down {
-  @include breakpoint-custom-down($screen-mmlg-min) {
-    @content;
-  }
-}
-
-@mixin breakpoint-xl-down {
-  @include breakpoint-custom-down($screen-xl-min) {
-    @content;
-  }
-}
-
-@mixin breakpoint-xxl-down {
-  @include breakpoint-custom-down($screen-xxl-min) {
-    @content;
-  }
-}
-
-@mixin padding-top-bottom($amount) {
-  padding-bottom: $amount;
-  padding-top: $amount;
-}
-
-@mixin padding-right-left($amount) {
-  padding-left: $amount;
-  padding-right: $amount;
-}
-
-@mixin margin-top-bottom($amount) {
-  margin-bottom: $amount;
-  margin-top: $amount;
-}
-
-@mixin margin-right-left($amount) {
-  margin-left: $amount;
-  margin-right: $amount;
-}
-
-@mixin border-top-bottom($value) {
-  border-bottom: $value;
-  border-top: $value;
-}
-
-@mixin border-right-left($value) {
-  border-left: $value;
-  border-right: $value;
 }
 
 //
@@ -249,7 +128,7 @@ $screen-xxl-min: 2000px; //100rem;
 // Clearfix
 @mixin clearfix {
   &::after {
-    content: "";
+    content: '';
     display: table;
     clear: both;
   }
