@@ -15,28 +15,32 @@ export const Nodes = {
 }
 
 export const NodeMap = new Map([
-  ['Literal', parseLiteral],
-  ['VariableDeclarator', parseVariableDeclarator],
-  ['VariableDeclaration', parseVariableDeclaration],
-  ['Identifier', parseIdentifier],
-  ['BinaryExpression', parseBinaryExpression],
-  ['UpdateExpression', parseUpdateExpression],
-  ['MemberExpression', parseMemberExpression],
-  // ['CallExpression', parseCallExpression],
-  // ['ExpressionStatement', parseExpressionStatement],
-  ['IfStatement', parseIfStatement],
-  // ['BlockStatement', parseBlockStatement],
-  ['ForStatement', parseForStatement],
-  ['Program', parseProgram],
+  ['Literal', { function: parseLiteral }],
+  ['VariableDeclarator', { function: parseVariableDeclarator }],
+  ['VariableDeclaration', { function: parseVariableDeclaration }],
+  ['Identifier', { function: parseIdentifier }],
+  ['BinaryExpression', { function: parseBinaryExpression }],
+  ['UpdateExpression', { function: parseUpdateExpression }],
+  ['MemberExpression', { function: parseMemberExpression }],
+  // ['CallExpression',         {function: parseCallExpression}],
+  // ['ExpressionStatement',    {function: parseExpressionStatement}],
+  ['IfStatement', { function: parseIfStatement }],
+  // ['BlockStatement',         {function: parseBlockStatement}],
+  ['ForStatement', { function: parseForStatement }],
+  ['Program', { function: parseProgram }],
 ])
 
 export function parseNode(node, conductor) {
   if (NodeMap.get(node.type)) {
-    let note = NodeMap.get(node.type)(node)
+    let note = getNote(node)
     if (note) {
-      conductor.play(note)
+      conductor.collectNote(note)
     }
   }
+}
+
+function getNote(node) {
+  return NodeMap.get(node.type).function(node)
 }
 
 function parseLiteral(node) {
@@ -67,11 +71,7 @@ function parseUpdateExpression(node) {
   return 'C3'
 }
 function parseMemberExpression(node) {
-  if (node.object.type !== Nodes.MEMBER_EXPRESSION) {
-    NodeMap.get(node.property.type)(node.property)
-  } else {
-    NodeMap.get(node.property.type)(node.property)
-  }
+  return getNote(node.property)
 }
 function parseCallExpression(node) {
   let s = ''
