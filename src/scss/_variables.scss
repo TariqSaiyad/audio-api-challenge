@@ -1,0 +1,157 @@
+/*
+* Config for the styles
+*/
+// --------  opacities  --------
+
+$opacity-semi-translucent: 0.02;
+$opacity-translucent: 0.35;
+$opacity-very-translucent: 0.6;
+$opacity-semi-transparent: 0.8;
+
+// --------  colors  --------
+$color-blue-light: #24a7ff;
+$color-blue: #1472e6;
+$color-blue-dark: #008cff;
+$color-blue-button-dark: #0e5cba;
+$color-blue-active: #1470e1;
+$color-blue-menu-dark: #20419a;
+$color-indigo: #272082;
+$color-purple-blue: #4e248b;
+$color-purple-light: #9192c8;
+$color-purple: #9a46ce;
+$color-purple-red: #502189;
+$color-purple-dark: #2f1b55;
+$color-red-light: #f42c49;
+$color-red: #e4243b;
+$color-red-dark: #e21a40;
+$color-melon-light: #fb2;
+$color-melon: #ffac27;
+$color-melon-dark: #ff9c0d;
+$color-green: #0e853e;
+$color-black: #050505;
+$color-xdark-grey: #5e5e5e;
+$color-xdark-grey-s2: #1b1c1d;
+$color-dark-grey: #808080;
+$color-mid-grey: #b7b7b7;
+$color-charcoal-mid: #1e1e1e;
+$color-charcoal-mid-2: #2c2c2c;
+$color-charcoal-mid-s2: #2c2c2c;
+$color-charcoal-mid-s3: #343433;
+$color-charcoal-mid-s4: #313131;
+$color-charcoal-footer: #242424;
+$color-grey-icon: #a0a0a0;
+$color-bullet-icon: #cdcfdd;
+$color-disabled-border: #a7a9ac;
+$color-disabled-background: #e6e7e8;
+$color-grey: #eae9f3;
+$color-pale-grey: #e4e6e2;
+$color-light-grey: #eaeaea;
+$color-light-grey-s2: #fafafa;
+$color-light-grey-s3: #ececec;
+$color-light-grey-s4: #d1d3d4;
+$color-light-grey-s5: #757575;
+$color-light-grey-s6: #ffffff80;
+$color-light-grey-s7: #737373;
+$color-xlight-grey: #f5f5f5;
+$color-xlight-grey-s2: #fafafa;
+$color-white: #fff;
+$color-grey-text: #4a4a4a;
+$color-yellow: #ffd444;
+$color-yellow-dark: #e5be3d;
+$color-light-purple: #f2f3ff;
+$color-lightest-purple: #f5f6ff;
+$color-grey-mid: #dedede;
+$color-orange: #cf6b38;
+
+$light-background-color-yellow: rgba(255, 212, 68, 0.08);
+
+//mappings
+$color-background: #222222;
+$color-background-light: $color-lightest-purple;
+$color-text: $color-light-grey;
+$color-footer-background: $color-charcoal-mid;
+$color-footer-copyright-background: #121212;
+
+// --------  font  --------
+
+$font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+$font-family-secondary: 'Martel', serif;
+
+/* stylelint-disable-next-line unit-blacklist */
+$font-size-base-mobile: 16px;
+/* stylelint-disable-next-line unit-blacklist */
+$font-size-base: 18px;
+
+$font-size-xxxsmall: 0.5rem;
+$font-size-xxsmall: 0.65rem;
+$font-size-tablet-nav: 0.722rem;
+$font-size-xsmall: 0.83rem;
+$font-size-card: 0.85rem;
+$font-size-small: 0.9rem;
+$font-size-standard: 1rem;
+$font-size-medium: 1.1rem;
+$font-size-ms: 1.3rem;
+$font-size-mml: 1.5rem;
+$font-size-ml: 1.75rem;
+$font-size-large: 2rem;
+$font-size-mxlarge: 2.5rem;
+$font-size-xlarge: 3rem;
+$font-size-xxlarge: 4rem;
+$font-size-xxxlarge: 5rem;
+$font-size-headline-sm: 2rem;
+$font-size-headline: 2.5rem;
+
+$font-size-h1: 3.056rem;
+$font-size-h2: 1.563rem;
+$font-size-h3: 1.953rem;
+$font-size-h4: 1.556rem;
+$font-size-h5: 1.25rem;
+$font-size-h6: 1rem;
+
+$line-height-base: 1.666;
+$line-height-mid: 1.5;
+$line-height-large: 1.2;
+$line-height-medium: 1.143;
+
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-book: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+$font-weight-black: 800;
+
+// --------  sizes  --------
+
+$gap-base: 2rem;
+
+$icon-size: 2.5rem;
+
+// Bluma screen breakpoints
+// https://bulma.io/documentation/overview/responsiveness/
+$screen-mobile: 767px;
+$screen-tablet: 768px;
+$screen-desktop: 1024px;
+$screen-widescreen: 1216px;
+$screen-fullhd: 1408px;
+/* stylelint-enable unit-blacklist */
+
+// --------  containers  --------
+
+$container-narrow: 48rem;
+$container-standard: 68rem;
+
+// --------  global padding --------
+$component-bottom-padding: 2rem;
+
+// --------  shadows  --------
+
+$shadow-standard: 0 0.1rem 1rem transparentize($color-black, 0.95);
+$shadow-text: 0 -0.05rem 0.1rem transparentize($color-black, 0.9);
+$shadow-drop: 0 0.5rem 1rem 0 transparentize($color-black, 0.9);
+$shadow-drop-active: -0.25rem 0 0.5rem -0.25rem $color-black;
