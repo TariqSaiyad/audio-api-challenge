@@ -45,30 +45,30 @@ function getNote(node) {
 
 function parseLiteral(node) {
   console.log(`${node.type}: ${node.value}`)
-  return 'D4'
+  return ['D4']
 }
 function parseVariableDeclarator(node) {
   console.log(`${node.type}: =`) // declaretion
   console.log(`${node.id.type}: ${node.id.name}`) // Identifier name
-
-  return ['A4', 'E3']
+  return ['C3']
+  // return ['C3 ', 'F3', 'C3', 'G3', 'C3']
 }
 
 function parseVariableDeclaration(node) {
   console.log(`${node.type}: ${node.kind}`)
-  return 'D#2'
+  return ['D#2']
 }
 function parseIdentifier(node) {
   console.log(`${node.type}: ${node.name}`)
-  return 'F4'
+  return ['F4']
 }
 function parseBinaryExpression(node) {
   console.log(`${node.type}: ${node.operator}`)
-  return 'C4'
+  return ['C4']
 }
 function parseUpdateExpression(node) {
   console.log(`${node.type}: ${node.operator}`)
-  return 'C3'
+  return ['C3']
 }
 function parseMemberExpression(node) {
   return getNote(node.property)
@@ -79,28 +79,28 @@ function parseCallExpression(node) {
     s += `${node.type}: ${arg.type}, `
   })
   console.log(s)
-  return 'A1'
+  return ['A1']
 }
 function parseExpressionStatement(node) {
   console.log(`${node.type}: expression`)
-  return 'D#3'
+  return ['D#3']
 }
 function parseIfStatement(node) {
   const checkIf = node.alternate && node.alternate.type === Nodes.IF_STATEMENT
   checkIf ? console.log(`${node.type}: else if`) : console.log(`${node.type}: if`)
-  return checkIf ? 'F#1' : 'F#3'
+  return checkIf ? ['F#1'] : ['F#3']
 }
 function parseBlockStatement(node) {
   console.log(`${node.type}: block`)
-  return 'E2'
+  return ['E2']
 }
 function parseForStatement(node) {
   console.log(`${node.type}: for`)
-  return 'A2'
+  return ['A2']
 }
 function parseProgram(node) {
   console.log(`${node.type}: ${node.sourceType}`)
-  return 'E#4'
+  return ['E#4']
 }
 function parseDefault(node) {
   console.log(`Default: ${node.type}`)

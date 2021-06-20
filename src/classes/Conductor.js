@@ -11,12 +11,14 @@ class Conductor {
     this.total = 0
 
     this.attackDuration = 0.5
-    this.releaseDuration = 1
+    this.releaseDuration = 0.7
   }
 
-  collectNote(note) {
-    this.notes.push(note)
-    this.total += this.attackDuration
+  collectNote(noteList) {
+    noteList.forEach((n) => {
+      this.notes.push(n)
+    })
+    this.total += this.attackDuration * noteList.length
   }
 
   play() {
