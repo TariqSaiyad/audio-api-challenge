@@ -9,15 +9,16 @@ import './scss/main.scss'
 import './App.scss'
 import Conductor from './classes/Conductor'
 import { exampleCode } from './constants/constants'
+import Visualiser from './components/Visualiser'
 
 function App() {
   const acorn = require('acorn')
   const walk = require('acorn-walk')
-  const conductor = new Conductor()
   const [code, setCode] = useState(exampleCode[0])
 
   const [songTime, setSongTime] = useState(0)
   const [playing, setPlaying] = useState(false)
+  const [conductor, setConductor] = useState(new Conductor())
 
   function onChange(value) {
     setCode(value.slice())
@@ -50,17 +51,18 @@ function App() {
     setPlaying(true)
     setSongTime(conductor.total + conductor.releaseDuration)
     conductor.play()
+    setConductor(conductor)
   }
 
   return (
     <div className='app container__standard'>
       <Header title='Web Audio API' subtitle='Tariq Saiyad' />
-      <CodeEditor code={code} onChange={onChange} />
+      {playing ? <Visualiser conductor={conductor} /> : <CodeEditor code={code} onChange={onChange} />}
       <div className='app__info-wrapper'>
         <button className='app__run heading-small' onClick={runCode}>
           <svg viewBox='0 0 512 512'>{getIcon()}</svg>
         </button>
-        {songTime} sec
+        {songTime.toFixed(2)} sec
       </div>
     </div>
   )

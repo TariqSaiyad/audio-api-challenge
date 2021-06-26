@@ -8,9 +8,10 @@ class Conductor {
     this.synth.sync()
     // this.synth.set({harmonicity:1})
     this.notes = []
+    this.words = []
     this.total = 0
 
-    this.attackDuration = 0.5
+    this.attackDuration = 0.4
     this.releaseDuration = 0.7
   }
 
@@ -18,7 +19,12 @@ class Conductor {
     noteList.forEach((n) => {
       this.notes.push(n)
     })
+    let x = 5
     this.total += this.attackDuration * noteList.length
+  }
+
+  collectWord(word) {
+    this.words.push(word)
   }
 
   play() {

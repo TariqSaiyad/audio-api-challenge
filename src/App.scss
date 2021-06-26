@@ -1,7 +1,7 @@
 .app {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto minmax(30rem, 1fr);
   gap: 0px 36px;
   grid-template-areas:
     'Header Header Header'
