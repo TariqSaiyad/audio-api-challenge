@@ -13,6 +13,7 @@ import { exampleCode } from './constants/constants'
 function App() {
   const acorn = require('acorn')
   const walk = require('acorn-walk')
+  // conductor stores all of the notes, timing settings & words
   const conductor = new Conductor()
   const [code, setCode] = useState(exampleCode[0])
 

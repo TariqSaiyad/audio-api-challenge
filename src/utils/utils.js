@@ -13,7 +13,7 @@ export const Nodes = {
   FOR_STATEMENT: 'ForStatement',
   PROGRAM: 'Program',
 }
-
+// Each different type of node will call the parseNode function
 export const NodeMap = new Map([
   ['Literal', { function: parseLiteral }],
   ['VariableDeclarator', { function: parseVariableDeclarator }],
