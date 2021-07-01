@@ -24,7 +24,7 @@ export const NodeMap = new Map([
   ['BinaryExpression', { function: parseBinaryExpression }],
   ['UpdateExpression', { function: parseUpdateExpression }],
   ['MemberExpression', { function: parseMemberExpression }],
-  // ['CallExpression',         {function: parseCallExpression}],
+  ['CallExpression', { function: parseCallExpression }],
   // ['ExpressionStatement',    {function: parseExpressionStatement}],
   ['IfStatement', { function: parseIfStatement }],
   // ['BlockStatement',         {function: parseBlockStatement}],
@@ -42,7 +42,7 @@ export function parseNode(node, conductor) {
   }
 }
 
-function getNoteWordPair(note, word, synth=synths.SYNTHTWO) {
+function getNoteWordPair(note, word, synth = synths.SYNTHTWO) {
   return { note: note, word: word, synth: synth }
 }
 
@@ -52,7 +52,21 @@ function getNote(node) {
 
 function parseLiteral(node) {
   console.log(`${node.type}: ${node.value}`)
-  return getNoteWordPair(['D4'], node.value, synths.SYNTHONE)
+  let l = node.value.toString().length
+  let n = 'D1'
+  if (l <= 1) {
+    n = 'D1'
+  } else if (l > 1 && l <= 3) {
+    n = 'D2'
+  } else if (l > 3 && l <= 5) {
+    n = 'D3'
+  } else if (l > 5 && l <= 7) {
+    n = 'D4'
+  } else {
+    n = 'D5'
+  }
+console.log(l,n);
+  return getNoteWordPair([n], node.value, synths.SYNTHONE)
 }
 function parseVariableDeclarator(node) {
   console.log(`${node.type}: =`) // declaretion
@@ -68,7 +82,21 @@ function parseVariableDeclaration(node) {
 }
 function parseIdentifier(node) {
   console.log(`${node.type}: ${node.name}`)
-  return getNoteWordPair(['F4'], node.name)
+  let l = node.name.toString().length
+  let n = 'F1'
+  if (l <= 1) {
+    n = 'F1'
+  } else if (l > 1 && l <= 3) {
+    n = 'F2'
+  } else if (l > 3 && l <= 5) {
+    n = 'F3'
+  } else if (l > 5 && l <= 7) {
+    n = 'F4'
+  } else {
+    n = 'F5'
+  }
+console.log(l,n);
+  return getNoteWordPair([n], node.name)
 }
 function parseBinaryExpression(node) {
   console.log(`${node.type}: ${node.operator}`)
@@ -83,11 +111,9 @@ function parseMemberExpression(node) {
 }
 function parseCallExpression(node) {
   let s = ''
-  node.arguments.forEach((arg) => {
-    s += `${node.type}: ${arg.type}, `
-  })
+  s = `${node.callee.object.name}.${node.callee.property.name}()`
   console.log(s)
-  return getNoteWordPair(['A1'], arg.type)
+  return getNoteWordPair(['A1'], s)
 }
 function parseExpressionStatement(node) {
   console.log(`${node.type}: expression`)

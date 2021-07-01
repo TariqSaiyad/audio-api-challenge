@@ -13,7 +13,12 @@ export const exampleCode = [
   },
   {
     label: 'console.log()',
-    value: `console.log("Hello World")`,
+    value: `
+    console.log("Hello World");
+    console.log("Testing...", "1","2","3");
+    console.log("DJ Khalid!");
+    console.log("Another one");
+  `,
   },
 ]
 export const synths = {

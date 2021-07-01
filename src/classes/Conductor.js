@@ -9,7 +9,8 @@ class Conductor {
     this.synthOne.sync()
     this.synthTwo = new Tone.PolySynth(Tone.AMSynth).toDestination()
     this.synthTwo.sync()
-    // this.synth.set({harmonicity:1})
+    this.synthOne.set({volume:-100 })
+    this.synthTwo.set({volume:-100 })
     this.notes = []
     this.words = []
     this.total = 0
@@ -23,7 +24,6 @@ class Conductor {
       notes: noteList,
       synth: synth,
     })
-    let x = 5
     this.total += this.attackDuration * noteList.length
   }
 
@@ -51,7 +51,9 @@ class Conductor {
       }
       this.musicLength += this.attackDuration
     })
-    Tone.Transport.start()
+    // Tone.Transport.stop(`+${this.musicLength}`)
+
+   
   }
 }
 

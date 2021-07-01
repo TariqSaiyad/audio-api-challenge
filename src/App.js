@@ -49,9 +49,10 @@ function App() {
     setConductor(conductor)
   }
 
+
   return (
     <div className='app container__standard'>
-      <Header title='Web Audio API' subtitle='Tariq Saiyad' />
+      <Header title='Web Audio API' subtitle='Tariq & Emily' />
       {playing ? <Visualiser conductor={conductor} /> : <CodeEditor code={code} onChange={onChange} />}
       <div className='app__info-wrapper'>
         <div className='app__dropdown'>
@@ -66,7 +67,7 @@ function App() {
         <button className='app__run heading-small' onClick={runCode}>
           <svg viewBox='0 0 512 512'>{getIcon()}</svg>
         </button>
-        {songTime.toFixed(2)} sec
+        <p className="app__runtime">Play Time: <strong>{songTime.toFixed(2)} sec</strong></p>
       </div>
     </div>
   )
