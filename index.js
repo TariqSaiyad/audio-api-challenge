@@ -8,4 +8,7 @@ function renderApp() {
 
 renderApp()
 
-module.hot.accept()
+if(process.env.NODE_ENV === 'development'){
+  module.hot.accept()
+}
+
