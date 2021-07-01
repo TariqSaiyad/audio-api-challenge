@@ -32,6 +32,8 @@ export default class Visualiser extends React.Component {
     const { particles, count } = this.state
 
     let x, y, hue
+
+    // do drawing or DOM manipulation here
     for (let index = 0; index < conductor.words.length; index++) {
       x = p5.random(p5.width)
       y = p5.random(p5.height)

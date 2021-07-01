@@ -32,7 +32,7 @@ class Conductor {
   }
 
   play() {
-    this.now = Tone.now()
+    this.now = Tone.context.currentTime
 
     this.notes.forEach((n) => {
       switch (n.synth) {

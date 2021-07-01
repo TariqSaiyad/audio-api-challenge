@@ -10,11 +10,13 @@ import './App.scss'
 import Conductor from './classes/Conductor'
 import { exampleCode } from './constants/constants'
 import Visualiser from './components/Visualiser'
+import Select from 'react-dropdown-select'
+import makeAnimated from 'react-select/animated'
 
 function App() {
   const acorn = require('acorn')
   const walk = require('acorn-walk')
-  const [code, setCode] = useState(exampleCode[0])
+  const [code, setCode] = useState(exampleCode[0].value)
 
   const [songTime, setSongTime] = useState(0)
   const [playing, setPlaying] = useState(false)
@@ -37,13 +39,6 @@ function App() {
 
     console.log('Audio Ready')
 
-    // conductor.play('D4')
-    // conductor.play('F#4')
-    // conductor.play('A4')
-    // conductor.play('C5')
-    // conductor.play('E5')
-    // synth.triggerRelease(['D4', 'F#4', 'A4', 'C5', 'E5'], now + 4)
-
     walk.full(acorn.parse(code), (node) => {
       parseNode(node, conductor)
     })
@@ -59,6 +54,15 @@ function App() {
       <Header title='Web Audio API' subtitle='Tariq Saiyad' />
       {playing ? <Visualiser conductor={conductor} /> : <CodeEditor code={code} onChange={onChange} />}
       <div className='app__info-wrapper'>
+        <div className='app__dropdown'>
+          <Select
+            searchable={false}
+            placeholder='Select Code'
+            options={exampleCode}
+            value={exampleCode[0]}
+            onChange={(v) => setCode(v[0].value.slice())}
+          />
+        </div>
         <button className='app__run heading-small' onClick={runCode}>
           <svg viewBox='0 0 512 512'>{getIcon()}</svg>
         </button>

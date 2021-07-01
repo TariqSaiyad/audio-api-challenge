@@ -14,6 +14,28 @@
     align-items: flex-start;
   }
 
+  &__dropdown {
+    width: 100%;
+    padding-bottom: 1rem;
+
+    .react-dropdown-select {
+      border-radius: 0.5rem;
+      font-family: monospace;
+      font-size: 0.8rem;
+    }
+
+    .react-dropdown-select-dropdown {
+      border-radius: 0.5rem;
+      border: none;
+    }
+    .react-dropdown-select-item {
+      color: #eaeaea;
+      background: hsl(0, 0, 10%);
+      border: none;
+      padding: 0.5rem 0.2rem;
+    }
+  }
+
   &__run {
     width: 100%;
     background: #1c6b48;
@@ -23,7 +45,7 @@
     padding: 0.5rem 2rem;
     box-shadow: 0 0.1rem 1rem transparentize(green, 0.95);
     transition: all 100ms ease-out;
-    
+
     &:hover {
       background: rgb(21, 81, 54);
     }
