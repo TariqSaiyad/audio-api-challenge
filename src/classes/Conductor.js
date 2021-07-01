@@ -9,8 +9,8 @@ class Conductor {
     this.synthOne.sync()
     this.synthTwo = new Tone.PolySynth(Tone.AMSynth).toDestination()
     this.synthTwo.sync()
-    this.synthOne.set({volume:-100 })
-    this.synthTwo.set({volume:-100 })
+    // this.synthOne.set({volume:-100 })
+    // this.synthTwo.set({volume:-100 })
     this.notes = []
     this.words = []
     this.total = 0
