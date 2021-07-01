@@ -9,3 +9,8 @@ export const exampleCode = [
   else console.log(i)
 }`,
 ]
+
+export const synths = {
+  SYNTHONE: 'SYNTHONE',
+  SYNTHTWO: 'SYNTHTWO',
+}

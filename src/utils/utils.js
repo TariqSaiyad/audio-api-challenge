@@ -1,3 +1,5 @@
+import { synths } from "../constants/constants"
+
 export const Nodes = {
   LITERAL: 'Literal',
   VARIABLE_DECLARATOR: 'VariableDeclarator',
@@ -32,16 +34,16 @@ export const NodeMap = new Map([
 
 export function parseNode(node, conductor) {
   if (NodeMap.get(node.type)) {
-    let {note, word} = getNote(node)
+    let {note, word, synth} = getNote(node)
     if (note) {
-      conductor.collectNote(note)
+      conductor.collectNote(note, synth)
       conductor.collectWord(word)
     }
   }
 }
 
-function getNoteWordPair(note, word) {
-  return { note: note, word: word }
+function getNoteWordPair(note, word, synth) {
+  return { note: note, word: word, synth: synth, }
 }
 
 function getNote(node) {
@@ -50,12 +52,12 @@ function getNote(node) {
 
 function parseLiteral(node) {
   console.log(`${node.type}: ${node.value}`)
-  return getNoteWordPair(['D4'], node.value)
+  return getNoteWordPair(['D4'], node.value, synths.SYNTHTWO)
 }
 function parseVariableDeclarator(node) {
   console.log(`${node.type}: =`) // declaretion
   console.log(`${node.id.type}: ${node.id.name}`) // Identifier name
-  return getNoteWordPair(['C3'], node.id.name)
+  return getNoteWordPair(['C3'], node.id.name, synths.SYNTHTWO)
 
   // return ['C3 ', 'F3', 'C3', 'G3', 'C3']
 }
