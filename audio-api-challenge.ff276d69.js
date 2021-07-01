@@ -1156,4 +1156,4 @@ function e(e,o){return o||(o=e.slice(0)),Object.freeze(Object.defineProperties(e
 },{"@babel/runtime/helpers/asyncToGenerator":"fwsn","@babel/runtime/helpers/slicedToArray":"xw6J","@babel/runtime/regenerator":"m4eR","react":"HdMw","react-hot-loader":"d3EK","./components/CodeEditor":"rjjP","./components/Header":"GNf1","./utils/utils":"vnMZ","tone":"Houh","./scss/main.scss":"OGMY","./App.scss":"OGMY","./classes/Conductor":"phbd","./constants/constants":"MQJj","./components/Visualiser":"OAFp","react-dropdown-select":"AlEC","react-select/animated":"uq39","acorn":"Heqi","acorn-walk":"tIzF"}],"Focm":[function(require,module,exports) {
 "use strict";var e=u(require("react")),t=require("react-dom"),r=u(require("./src/App"));function u(e){return e&&e.__esModule?e:{default:e}}function c(){(0,t.render)(e.default.createElement(r.default,null),document.getElementById("app"))}c(),module.hot.accept();
 },{"react":"HdMw","react-dom":"X9zx","./src/App":"FLHj"}]},{},["Focm"], null)
-//# sourceMappingURL=/audio-api-challenge.ff276d69.js.map
+//# sourceMappingURL=audio-api-challenge.ff276d69.js.map
