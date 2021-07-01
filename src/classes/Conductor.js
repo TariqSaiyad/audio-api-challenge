@@ -7,7 +7,7 @@ class Conductor {
     this.musicLength = 0
     this.synthOne = new Tone.PolySynth(Tone.FMSynth).toDestination()
     this.synthOne.sync()
-    this.synthTwo = new Tone.MonoSynth(Tone.NoiseSynth).toDestination()
+    this.synthTwo = new Tone.PolySynth(Tone.AMSynth).toDestination()
     this.synthTwo.sync()
     // this.synth.set({harmonicity:1})
     this.notes = []
@@ -20,7 +20,7 @@ class Conductor {
 
   collectNote(noteList, synth) {
     this.notes.push({
-      notes: noteList, 
+      notes: noteList,
       synth: synth,
     })
     let x = 5
@@ -39,15 +39,15 @@ class Conductor {
         case synths.SYNTHONE:
           this.synthOne.triggerAttack(n.notes, this.now + this.musicLength)
           this.synthOne.triggerRelease(n.notes, this.now + this.musicLength + this.releaseDuration)
-          break;
+          break
         case synths.SYNTHTWO:
           this.synthTwo.triggerAttack(n.notes, this.now + this.musicLength)
           this.synthTwo.triggerRelease(n.notes, this.now + this.musicLength + this.releaseDuration)
-          break;
+          break
         default:
           this.synthOne.triggerAttack(n.notes, this.now + this.musicLength)
           this.synthOne.triggerRelease(n.notes, this.now + this.musicLength + this.releaseDuration)
-          break;
+          break
       }
       this.musicLength += this.attackDuration
     })
