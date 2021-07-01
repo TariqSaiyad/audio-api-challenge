@@ -17,7 +17,7 @@ function CodeEditor(props) {
   return (
     <div className='editor'>
       <AceEditor
-        height='30rem'
+        height='100%'
         width='100%'
         fontSize={18}
         className='editor__code'

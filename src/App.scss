@@ -1,17 +1,40 @@
 .app {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto minmax(40rem, 1fr);
   gap: 0px 36px;
   grid-template-areas:
-    'Header Header Header'
-    'Code Code Info';
+    'Header Header Header Header'
+    'Code Code Code Info';
 
   &__info-wrapper {
     grid-area: Info;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  &__dropdown {
+    width: 100%;
+    padding-bottom: 2rem;
+
+    .react-dropdown-select {
+      border-radius: 0.5rem;
+      font-family: monospace;
+      font-size: 0.8rem;
+      padding: 0.5rem;
+    }
+
+    .react-dropdown-select-dropdown {
+      border-radius: 0.5rem;
+      border: none;
+    }
+    .react-dropdown-select-item {
+      color: #eaeaea;
+      background: hsl(0, 0, 10%);
+      border: none;
+      padding: 0.5rem 0.2rem;
+    }
   }
 
   &__run {
@@ -23,7 +46,7 @@
     padding: 0.5rem 2rem;
     box-shadow: 0 0.1rem 1rem transparentize(green, 0.95);
     transition: all 100ms ease-out;
-    
+
     &:hover {
       background: rgb(21, 81, 54);
     }
@@ -39,5 +62,12 @@
       height: 100%;
       width: 1rem;
     }
+  }
+
+  &__runtime {
+    width: 100%;
+    padding-top: 2rem;
+    margin:0;
+    font-family: monospace;
   }
 }
