@@ -27,7 +27,7 @@ export const NodeMap = new Map([
   ['CallExpression', { function: parseCallExpression }],
   // ['ExpressionStatement',    {function: parseExpressionStatement}],
   ['IfStatement', { function: parseIfStatement }],
-  // ['BlockStatement',         {function: parseBlockStatement}],
+  ['BlockStatement',         {function: parseBlockStatement}],
   ['ForStatement', { function: parseForStatement }],
   ['Program', { function: parseProgram }],
 ])
@@ -43,6 +43,7 @@ export function parseNode(node, conductor) {
 }
 
 function getNoteWordPair(note, word, synth = synths.SYNTHTWO) {
+  console.log(note);
   return { note: note, word: word, synth: synth }
 }
 
@@ -53,58 +54,57 @@ function getNote(node) {
 function parseLiteral(node) {
   console.log(`${node.type}: ${node.value}`)
   let l = node.value.toString().length
-  let n = 'D1'
-  if (l <= 1) {
-    n = 'D1'
-  } else if (l > 1 && l <= 3) {
-    n = 'D2'
-  } else if (l > 3 && l <= 5) {
-    n = 'D3'
-  } else if (l > 5 && l <= 7) {
-    n = 'D4'
-  } else {
-    n = 'D5'
-  }
+  let n = 'A1'
+  // if (l <= 1) {
+  //   n = 'A1'
+  // } else if (l > 1 && l <= 3) {
+  //   n = 'C1'
+  // } else if (l > 3 && l <= 5) {
+  //   n = 'E1'
+  // } else if (l > 5 && l <= 7) {
+  //   n = 'D4'
+  // } else {
+  //   n = 'D5'
+  // }
 console.log(l,n);
-  return getNoteWordPair([n], node.value, synths.SYNTHONE)
+  return getNoteWordPair(['A1'], node.value, synths.SYNTHONE)
 }
 function parseVariableDeclarator(node) {
   console.log(`${node.type}: =`) // declaretion
   console.log(`${node.id.type}: ${node.id.name}`) // Identifier name
-  return getNoteWordPair(['C3'], node.id.name, synths.SYNTHTWO)
+  return getNoteWordPair(['C2'], node.id.name, synths.SYNTHTWO)
 
   // return ['C3 ', 'F3', 'C3', 'G3', 'C3']
 }
 
 function parseVariableDeclaration(node) {
   console.log(`${node.type}: ${node.kind}`)
-  return getNoteWordPair(['D#2'], node.kind)
+  return getNoteWordPair(['C2'], node.kind)
 }
 function parseIdentifier(node) {
   console.log(`${node.type}: ${node.name}`)
   let l = node.name.toString().length
-  let n = 'F1'
+  let n = 'C1'
   if (l <= 1) {
-    n = 'F1'
+    n = 'C1'
   } else if (l > 1 && l <= 3) {
-    n = 'F2'
+    n = 'E2'
   } else if (l > 3 && l <= 5) {
-    n = 'F3'
+    n = 'G2'
   } else if (l > 5 && l <= 7) {
-    n = 'F4'
+    n = 'E1'
   } else {
-    n = 'F5'
+    n = 'A2'
   }
-console.log(l,n);
   return getNoteWordPair([n], node.name)
 }
 function parseBinaryExpression(node) {
   console.log(`${node.type}: ${node.operator}`)
-  return getNoteWordPair(['C4'], node.operator)
+  return getNoteWordPair(['G2'], node.operator)
 }
 function parseUpdateExpression(node) {
   console.log(`${node.type}: ${node.operator}`)
-  return getNoteWordPair(['C3'], node.operator)
+  return getNoteWordPair(['G1'], node.operator)
 }
 function parseMemberExpression(node) {
   return getNote(node.property)
@@ -117,16 +117,16 @@ function parseCallExpression(node) {
 }
 function parseExpressionStatement(node) {
   console.log(`${node.type}: expression`)
-  return getNoteWordPair(['D#3'], node.type)
+  return getNoteWordPair(['C2'], node.type)
 }
 function parseIfStatement(node) {
   const checkIf = node.alternate && node.alternate.type === Nodes.IF_STATEMENT
   checkIf ? console.log(`${node.type}: else if`) : console.log(`${node.type}: if`)
-  return checkIf ? getNoteWordPair(['F#1'], 'else if') : getNoteWordPair(['F#3'], 'if')
+  return checkIf ? getNoteWordPair(['G2'], 'else if') : getNoteWordPair(['A2'], 'if')
 }
 function parseBlockStatement(node) {
   console.log(`${node.type}: block`)
-  return getNoteWordPair(['E2'], note.type)
+  return getNoteWordPair(['E2'], node.type)
 }
 function parseForStatement(node) {
   console.log(`${node.type}: for`)
@@ -134,7 +134,7 @@ function parseForStatement(node) {
 }
 function parseProgram(node) {
   console.log(`${node.type}: ${node.sourceType}`)
-  return getNoteWordPair(['E#4'], node.sourceType)
+  return getNoteWordPair(['C1'], node.sourceType)
 }
 function parseDefault(node) {
   console.log(`Default: ${node.type}`)
