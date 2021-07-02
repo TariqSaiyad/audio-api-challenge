@@ -45,6 +45,7 @@ export default class Visualiser extends React.Component {
     }
 
     Tone.Transport.start()
+    conductor.beat.start()
     Tone.Transport.stop(`+${conductor.total + conductor.releaseDuration + 1}`)
     setTimeout(() => this.addParticle(p5), 1000)
   }
