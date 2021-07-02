@@ -1,3 +1,5 @@
+import { Tone } from "tone/build/esm/core/Tone"
+
 export const OCTAVES = [1, 2, 3, 4, 5, 6, 7]
 export const NOTES = ['A', 'C', 'D#', 'F#', 'E']
 
